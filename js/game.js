@@ -1,6 +1,7 @@
 const grid = document.querySelector(".grid");
 const spanPlayer = document.querySelector(".player");
 const spanTimer = document.querySelector(".timer");
+const container = document.querySelector("#container");
 
 const characters = [
   "beth",
@@ -36,6 +37,7 @@ const checkEndGame = () => {
     alert(
       `Parabéns, ${spanPlayer.innerHTML}! Seu tempo foi: ${spanTimer.innerHTML}`
     );
+    container.hidden = false;
   }
 };
 
@@ -129,6 +131,18 @@ const startTimer = () => {
       seconds
     )}`;
   }, 1000);
+};
+
+const playAgain = () => {
+  container.hidden = true;
+  counter = 0;
+  minutes = 0;
+  seconds = 0;
+  spanTimer.innerHTML = "00:00";
+  grid.replaceChildren([]);
+
+  startTimer();
+  loadGame();
 };
 
 window.onload = () => {
