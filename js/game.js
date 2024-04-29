@@ -15,6 +15,10 @@ const characters = [
   "scroopy",
 ];
 
+let counter = 0;
+let minutes = 0;
+let seconds = 0;
+
 const createElement = (tag, className) => {
   const element = document.createElement(tag);
   element.className = className;
@@ -101,10 +105,29 @@ const loadGame = () => {
   });
 };
 
+const convertToTwoDigit = (num) => {
+  if (num < 0) {
+    return ("0" + Math.abs(num)).slice(-2);
+  } else {
+    return ("0" + num).slice(-2);
+  }
+};
+
 const startTimer = () => {
   this.loop = setInterval(() => {
-    const currentTime = +spanTimer.innerHTML;
-    spanTimer.innerHTML = currentTime + 1;
+    counter += 1;
+
+    if (counter === 60) {
+      counter = 0;
+      minutes += 1;
+      seconds = 0;
+    } else {
+      seconds = counter;
+    }
+
+    spanTimer.innerHTML = `${convertToTwoDigit(minutes)}:${convertToTwoDigit(
+      seconds
+    )}`;
   }, 1000);
 };
 
