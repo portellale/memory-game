@@ -1,4 +1,4 @@
-.login-form {
+.login__form {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -15,10 +15,8 @@
 }
 
 .login__header img {
-  width: 250px;
+  width: 100px;
 }
-
-
 
 .login__header h1 {
   color: #333;
@@ -38,8 +36,7 @@
 }
 
 .login__button {
-  background-color: #00b5cc;
-  border: 3px solid #b2df28;
+  background-color: #ee665c;
   border-radius: 8px;
   color: #fff;
   cursor: pointer;
@@ -51,7 +48,6 @@
 
 .login__button:disabled {
   background-color: #eee;
-  border: 2px solid #969595;
   color: #aaa;
   cursor: auto;
 }

@@ -2,7 +2,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-image: url('../images/bg.jpg');
+  background-image: url("../images/bg.jpg");
   background-size: cover;
   min-height: 100vh;
   align-items: center;
@@ -25,10 +25,10 @@ header {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 15px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -48,9 +48,8 @@ header {
   position: absolute;
   background-size: cover;
   background-position: center;
-  border: 5px solid #00b5cc;
+  border: 2px solid #39813a;
   border-radius: 5px;
-  transition: all 400ms ease;
 }
 
 .front {
@@ -58,22 +57,17 @@ header {
 }
 
 .back {
-  background-image: url('../images/back.png');
+  background-image: url("../images/back.png");
   backface-visibility: hidden;
 }
 
 .reveal-card {
   transform: rotateY(180deg);
+  transition: 0.5s;
 }
 
 .disabled-card {
   filter: saturate(0);
   opacity: 0.5;
-}
-
-@media screen and (max-width:920px) {
-  .grid {
-    grid-template-columns: repeat(5, 1fr);
-
-  }
+  transition: 0.5s;
 }
